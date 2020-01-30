@@ -89,6 +89,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.lang.NumberFormatException;
 import java.lang.StringBuilder;
 
 public class SettingsManager implements ListMenu.SettingsListener {
@@ -885,7 +886,7 @@ public class SettingsManager implements ListMenu.SettingsListener {
                     }
                 } catch (FileNotFoundException e) {
                     Log.d(TAG, filePath + " doesn't found!");
-                } catch (IOException e) {
+                } catch (IOException | NumberFormatException e) {
                     Log.d(TAG, filePath + " read exception, " + e.getMessage());
                 }
             }
